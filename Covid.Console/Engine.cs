@@ -5,17 +5,17 @@ namespace Covid
     /// <summary>
     /// A slow engine.
     /// </summary>
-    public class SlowEngine : IEngine
+    public class Engine : IEngine
     {
         private readonly List<DataEntry> _data;
 
-        public SlowEngine(List<DataEntry> data)
+        public Engine(List<DataEntry> data)
         {
             _data = data;
         }
 
         /// <summary>
-        /// Returns the best matching DataEntry based on its QuestionText
+        /// Returns the best matching DataEntry based on a query
         /// </summary>
         /// <param name="query">The query</param>
         /// <returns>The best DataEntry with the most matching words</returns>

@@ -25,7 +25,7 @@ namespace Covid
         static void Main()
         {
             var data = new CsvReader().Read();
-            var engine = new SlowEngine(data);
+            var engine = new Engine(data);
 
             var stopwatch = Stopwatch.StartNew();
             var results = _queries.Select(q => new { Query = q, Match = engine.Match(q) }).ToList();
