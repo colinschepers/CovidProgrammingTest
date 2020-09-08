@@ -8,7 +8,7 @@ namespace Covid.Console
         static void Main()
         {
             var data = new CsvReader().ReadCovidData();
-
+            
             EngineComparer.Compare(new SuperEngine(data), new FastEngine(data), new SlowEngine(data), new MyEngine(data));
             
             System.Console.WriteLine("Press any key to exit...");
