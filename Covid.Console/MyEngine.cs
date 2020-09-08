@@ -1,15 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using Covid.Core;
+using System.Collections.Generic;
 
-namespace Covid
+namespace Covid.Console
 {
     /// <summary>
-    /// A slow engine.
+    /// A slow engine. Can you optimize the matching logic?
     /// </summary>
-    public class Engine : IEngine
+    public class MyEngine : IEngine
     {
         private readonly List<DataEntry> _data;
 
-        public Engine(List<DataEntry> data)
+        public MyEngine(List<DataEntry> data)
         {
             _data = data;
         }
@@ -26,9 +27,9 @@ namespace Covid
 
             foreach (var item in _data)
             {
+                var score = 0;
                 var queryWords = Tokenizer.Tokenize(query);
                 var questionWords = Tokenizer.Tokenize(item.QuestionText);
-                var score = 0;
 
                 foreach (var queryWord in queryWords)
                 {
